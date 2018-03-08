@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Outline - web</title>
+</head>
+<style>
+    body{font-family:Arial, Helvetica, sans-serif}
+    table { border-collapse: collapse; } 
+    th, td { padding: 0; vertical-align: top;}
+    
+    div{font-family:Arial, Helvetica, sans-serif}
+    #header{background-color:red; height:100px;width:50%}
+    #nav{background-color:green; height:200px;width:15%;float: left;}
+    #content{background-color:yellow; height:200px;width:50%; }
+    #footer{background-color:blue; height:100px;width:50%;clear: both;}
+
+</style>
+<body>
+    
+    <table width="50%">
+        <tr style="background-color:red"  height="100px">
+            <td colspan="2">Header</td>
+        </tr>
+        <tr height="200px">
+            <td style="background-color:green" width="30%">Navigation</td>
+            <td style="background-color:yellow">Content</td>
+        </tr>
+        <tr height="100px">
+            <td colspan="2" style="background-color:blue">Footer</td>
+        </tr>
+    </table>
+    
+    <br>
+    <div id="header"> Header</div>
+    <div id="nav">Navigation</div>
+    <div id="content">Content</div>
+    <div id="footer">Footer</div>
+
+   
+</body>
+</html>
