@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="utf-8" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>회원가입</title>
+    <style media="screen">
+    /* body em {color:red} 하위결합자*/
+      body > em {color:red}/*자식결합자 body는 자식으로서 em이 없다*/
+      input[required]{background-color:blue}/*속성결합자*/
+      a:link {color: black;}
+      a:hover {color: black;}
+      a:visited{color: black;}
+
+    </style>
+  </head>
+  <body>
+    <h4>This Headline is <em>very</em> important</h4>
+
+    필수입력 <input type="text" name="" value="" required>
+    <ul>
+        <li><a href="index.nhn?cate_code=100">네이버-책-소설</a></li>
+        <li><a href="index.nhn?cate_code=110">네이버-책-시/에세이</a></li>
+        <li><a href="index.nhn?cate_code=160">네이버-책-경제/경영</a></li>
+    </ul>
+  </body>
+</html>

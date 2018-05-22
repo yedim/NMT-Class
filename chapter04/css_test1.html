@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="utf-8" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+    h1{color:green;} /*전체선택자보다 우선*/
+    h2,h3{font-style: italic}/*그룹선택자*/
+    h4 em {color:red}
+    div span { background-color: purple}
+    div.yellow-box{background-color: yellow} /*종속선택자*/
+    div#orange-box{background-color: orange}/*종속선택자*/
+    div span#green-box{background-color: green}/*종속선택자*/
+    </style>
+
+  </head>
+  <body>
+    <em>css연습</em>
+    <h1>태그</h1>
+    <h2>헤딩h2</h2>
+    <h3>헤딩h3</h3>
+    <h4>This Headline is <em>very</em> important</h4>
+    <div class="yellow-box">
+      <span>노란색 박스입니다.</span>
+    </div>
+    <div id="orange-box">
+      <span>오렌지 박스입니다.</span>
+    </div>
+    <div >
+      <span id="green-box">그린박스입니다.</span>
+    </div>
+  </body>
+</html>
