@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    //잔 커피 가격 2000원 계산은 output
+    function calculate()
+    {
+        var a= document.getElementById("americano").value;
+        var p= a*2000;
+        document.getElementById("price").value=p+"원";        
+    }
+    </script>
+</head>
+<body>
+    <form action="" method="POST" name="myForm" id="myForm" oninput="calculate()">
+        <label for="">아메리카노</label>
+        <input type="number" id="americano" min=0 max=20><br>
+        <output id="price"></output>
+    </form>
+    <br>
+    <meter value="2" min="0" max="10">2 out of 10</meter>
+    <br>
+    Downloading ...
+    <progress value ="5000" max="10000">
+        <span id="status">50</span>%
+    </progress>
+
+
+
+</body>
+</html>

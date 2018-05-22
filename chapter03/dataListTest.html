@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+    function cal()
+    {
+        var ml = "http://"+document.getElementById("ml").value;
+        open(ml);
+    }
+    </script>
+</head>
+<body>
+    <form action="" method="POST" name="myForm" id="myForm" oninput="cal()">
+        <fieldset>
+            <legend>이동테스트</legend>
+            <label >Go to</label>
+        
+        http://<input type="text" id="ml" list="myList" >
+        <datalist id="myList" >
+        <option value="www.google.com"></option>
+        <option value="www.naver.com"></option>
+        
+        </datalist>
+    </fieldset>
+    </form>
+
+    <details>
+        <summary>이미지 추가 정보:</summary>
+        <ul>
+            <li>만든 날짜 : 2011년 </li>
+            <li>크기 : 11.9kb</li>
+            <li>위치 : D</li>
+        </ul>
+    </details>
+    <br>
+
+    <pre><code>
+        function Panel(element,canClose,closeHandler)
+        {
+            this.element=element;
+            this.canClose=canClose;
+            this.closeHandler=function(){if(closeHandler) closeHandler();}
+        }
+    </code></pre>
+    
+    <p>컴퓨터 하던 중<samp>problem (#707)</samp>에러 발생</p>
+
+    <p><var>n</var>의 수만큼 곱하시오</p>
+</body>
+</html>
