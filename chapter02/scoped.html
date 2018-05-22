@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>scoped 연습</title>
+    <style>
+    h1{font-size: 3em; color: skyblue}
+    p{font-size: 2em; color: saddlebrown}
+    </style>
+</head>
+<body>
+   <section>
+       <h1>나루토</h1>
+       <p>노랑머리 삐죽삐죽. 카카시가 나온다.</p>
+   </section>
+
+   <section>
+       <style scoped>
+        h1{font-size: 30px; color:red}
+        p{font-size: 2em; color: yellow}
+       </style>
+       <h1>원피스</h1>
+       <p>해적왕 루피. 고무고무!</p>
+   </section>
+</body>
+</html>
