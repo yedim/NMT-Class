@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <header>
+      <h2>선 그리기</h2>
+    </header>
+    <canvas id="myCanvas" width="1300" height="500" style="border:1px solid #ccc">
+
+      <script>
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+
+        ctx.lineWidth=20
+
+        ctx.beginPath();
+        ctx.moveTo(300,300);
+        ctx.lineTo(400,200);
+        ctx.lineTo(500,300);
+        ctx.lineJoin="bevel";
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(600,300);
+        ctx.lineTo(700,200);
+        ctx.lineTo(800,300);
+        ctx.lineJoin="round";
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(900,300);
+        ctx.lineTo(1000,200);
+        ctx.lineTo(1100,300);
+        ctx.lineJoin="miter";
+        ctx.stroke();
+
+
+        </script>
+  </body>
+</html>

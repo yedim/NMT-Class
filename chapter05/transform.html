@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+
+    /* class선택자보다 우선순위가 더 높음 */
+    div{
+      width: 150px;
+      height: 150px;
+      background-color: greenyellow;
+    }
+
+    .container{
+      background-color: red;
+      border: 1px solid black;
+    }
+
+    a:hover .transformed{
+      backface-visibility: visible;
+      /* 가려져 있는게 있으면 보여지게 */
+      transform-origin: 50% 42%;
+      transform: perspective(300px) rotateY(60deg) rotateX(0deg);
+    }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <a> <div class="transformed"></div></a>
+    </div>
+  </body>
+</html>

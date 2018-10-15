@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <header>
+      <h1>사각형 그리기</h1>
+    </header>
+    <canvas id="canvas" width="800" height="600"></canvas>
+    <script type="text/javascript">
+      var canvas = document.querySelector("canvas");
+      var context = canvas.getContext('2d');
+      context.fillStyle="red";
+      context.fillRect(0,0,800,600);
+      context.fillStyle="rgba(255,255,0,0.5)";
+
+      context.fillRect(400,200,800,600);
+      context.clearRect(150,150,400,400);
+      context.fillStyle="black";
+      context.strokeRect(100,100,300,300);
+
+    </script>
+  </body>
+</html>

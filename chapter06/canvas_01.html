@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" width="300px" height="200px" style="border:1px dotted red">
+      이 브라우저는 캔버스 지원 안함.
+      <!-- 캔버스 지원안하면 이 메시지가 뜬다. -->
+    </canvas>
+    <script type="text/javascript">
+      var canvas=document.querySelector("canvas");
+      var ctx = canvas.getContext("2d");
+      ctx.fillRect(0,0,100,100);
+    </script>
+  </body>
+</html>

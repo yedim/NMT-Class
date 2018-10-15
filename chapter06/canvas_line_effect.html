@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <header>
+      <h2>사각형 그리기</h2>
+    </header>
+    <canvas id="myCanvas" width="300" height="600" style="border:1px solid #ccc">
+
+      <script>
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+
+        var drawLine=function(){
+            var lineCap =["butt","round","square"];
+
+            for(var i=1; i<5; i++){
+              ctx.beginPath();
+              ctx.moveTo(100,100*i);
+              ctx.lineWidth=5*i;
+              ctx.lineCap=lineCap[i-1];
+              ctx.lineTo(200,100*i);
+              ctx.stroke();
+            }
+        }
+        drawLine();
+      </script>
+  </body>
+</html>

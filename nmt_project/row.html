@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="data.js"> </script>
+<style>
+
+input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 15px;
+  border: 1px solid grey;
+}
+#selectFilter
+{
+  float:left;
+  padding: 6px;
+  margin-left: 33%;
+  margin-right: 10px;
+}
+#myFilter
+{
+  padding: 6px;
+
+}
+
+.search-container{
+  margin-top:70px;
+}
+.search-container button {
+  padding: 6px 10px;
+  background: #ddd;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.search-container button:hover {
+  background: #ccc;
+}
+
+
+</style>
+
+<script type="text/javascript">
+    var tagObj={
+      "type":["한식","중식","분식","카페","고기","회/스시","뷔페","빵"],
+      "location":["묵동","신내동","중화동","상봉동","망우동","면목동"],
+      "price" : ["만원미만","1만원대","2만원대","3만원 이상"],
+      "taste" :["매콤","달달","담백","건강"],
+      "mood" :["조용한","복잡한","고급스런","깔끔한","허름한"],
+    }
+  var storeObj={
+    "store" : [
+      {"name":"고양이부엌",      "star":"3.0","type":"분식",  "location":"묵동",  "price" :"만원미만","taste" :"달달", "mood" :"깔끔한"}
+      {"name":"써브웨이",       "star":"3.8","type":"빵",  "location":"상봉동",  "price" :"만원미만","taste" :"달달", "mood" :"깔끔한"}
+      {"name":"마시께",         "star":"2.0","type":"회/스시",  "location":"묵동",  "price" :"1만원대","taste" :"담백", "mood" :"깔끔한"}
+      {"name":"청평매운탕",      "star":"2.3","type":"탕",  "location":"묵동",  "price" :"3만원 이상","taste" :"매콤", "mood" :"복잡한"}
+      {"name":"국수나무",        "star":"2.5","type":"분식",  "location":"중화동",  "price" :"만원미만","taste" :"건강", "mood" :"깔끔한"}
+      {"name":"써브웨이",        "star":"3.8","type":"빵",  "location":"면목동",  "price" :"만원미만","taste" :"달달", "mood" :"깔끔한"}
+      {"name":"애슐리",          "star":"4.2","type":"뷔페",  "location":"상봉동",  "price" :"1만원대","taste" :"달달", "mood" :"고급스런","purpose" :"가족외식","delivery":"false"}
+      {"name":"전설의짬뽕",      "star":"4.0","type":"중식",  "location":"묵동",  "price" :"만원미만","taste" :"매콤", "mood" :"복잡한","purpose" :"가족외식","delivery":"false"}
+      {"name":"스시고메이",      "star":"4.7","type":"회/스시",  "location":"묵동",  "price" :"1만원대","taste" :"담백", "mood" :"복잡한","purpose" :"데이트","delivery":"false"}
+      {"name":"황해칼국수",      "star":"4.5","type":"한식",  "location":"묵동",  "price" :"만원미만","taste" :"담백", "mood" :"깔끔한","purpose" :"가족외식","delivery":"false"}
+      {"name":"소야지",          "star":"3.8","type":"고기",  "location":"중화동",  "price" :"1만원대","taste" :"담백", "mood" :"복잡한","purpose" :"모임","delivery":"false"}
+      {"name":"옛가칼국수",      "star":"4.0","type":"한식",  "location":"상봉동",  "price" :"만원미만","taste" :"짭쪼름", "mood" :"허름한","purpose" :"가족외식","delivery":"false"}
+      {"name":"용마해장국",      "star":"3.8","type":"TV맛집",  "location":"망우동",  "price" :"만원미만","taste" :"매콤", "mood" :"허름한","purpose" :"가족외식","delivery":"false"}
+      {"name":"이영근닭갈비",     "star":"3.2","type":"고기",  "location":"망우동",  "price" :"1만원대","taste" :"짭쪼름", "mood" :"복잡한","purpose" :"모임","delivery":"false"}
+      {"name":"동부고려제과 ",    "star":"3.9","type":"TV맛집",  "location":"망우동",  "price" :"만원미만","taste" :"건강", "mood" :"깔끔한","purpose" :"혼자방문","delivery":"false"}
+      {"name":"지호한방삼계탕",  "star":"3.9","type":"한식",  "location":"망우동",  "price" :"1만원대","taste" :"건강", "mood" :"깔끔한","purpose" :"데이트","delivery":"false"}
+      {"name":"동촌",           "star":"4.5","type":"한식",  "location":"중화동",  "price" :"만원미만","taste" :"담백", "mood" :"허름한","purpose" :"가족외식","delivery":"false"}
+      {"name":"미스터신냉면",    "star":"3.8","type":"한식",  "location":"중화동",  "price" :"만원미만","taste" :"담백", "mood" :"허름한","purpose" :"혼자방문","delivery":"false"}
+      {"name":"허니치킨",        "star":"3.8","type":"고기",  "location":"중화동",  "price" :"만원미만","taste" :"달달", "mood" :"깔끔한","purpose" :"혼자방문","delivery":"false"}
+      {"name":"포트오브모카",     "star":"4.1","type":"카페",  "location":"중화동",  "price" :"만원미만","taste" :"달달", "mood" :"고급스런","purpose" :"혼자방문","delivery":"false"}
+      {"name":"산채가",          "star":"3.5","type":"한식",  "location":"묵동",  "price" :"만원미만","taste" :"건강", "mood" :"깔끔한","purpose" :"가족외식","delivery":"false"}
+      {"name":"하루초밥","star":"4.5","type":"회/스시",  "location":"묵동",  "price" :"1만원대","taste" :"담백", "mood" :"고급스런","purpose" :"데이트","delivery":"false"}
+      {"name":"병규돈까스","star":"4.6","type":"한식",  "location":"묵동",  "price" :"만원미만","taste" :"담백", "mood" :"깔끔한","purpose" :"혼자방문","delivery":"false"}
+      {"name":"바푸리","star":"3.5","type":"분식",  "location":"묵동",  "price" :"만원미만","taste" :"건강", "mood" :"깔끔한","purpose" :"혼자방문","delivery":"false"}
+      {"name":"대구반야월막창","star":"2.9","type":"고기",  "location":"묵동",  "price" :"1만원대","taste" :"짭쪼름", "mood" :"복잡한","purpose" :"모임","delivery":"false"}
+      {"name":"토시래","star":"3.9","type":"고기",  "location":"묵동",  "price" :"2만원대","taste" :"담백", "mood" :"깔끔한","purpose" :"가족외식","delivery":"true"}
+      {"name":"디저트39","star":"4.2","type":"카페",  "location":"묵동",  "price" :"만원미만","taste" :"달달", "mood" :"고급스런","purpose" :"데이트","delivery":"false"}
+      {"name":"이가네곱창","star":"4.5","type":"고기",  "location":"묵동",  "price" :"만원미만","taste" :"매콤", "mood" :"허름한","purpose" :"혼자방문","delivery":"false"}
+      {"name":"스시남","star":"4.6","type":"회/스시",  "location":"묵동",  "price" :"1만원대","taste" :"담백", "mood" :"고급스런","purpose" :"데이트","delivery":"false"}
+      {"name":"와따곱창","star":"4.8","type":"고기",  "location":"묵동",  "price" :"만원미만","taste" :"매콤", "mood" :"허름한","purpose" :"가족외식","delivery":"false"}
+      {"name":"흑구촌생고기","star":"4.2","type":"고기",  "location":"묵동",  "price" :"1만원대","taste" :"담백", "mood" :"허름한","purpose" :"가족외식","delivery":"false"}
+      {"name":"옛먹골할머니왕족발보쌈","star":"4.2","type":"고기",  "location":"묵동",  "price" :"2만원대","taste" :"담백", "mood" :"깔끔한","purpose" :"모임","delivery":"true"}
+      {"name":"장모님냉면","star":"4.0","type":"TV맛집",  "location":"묵동",  "price" :"만원미만","taste" :"담백", "mood" :"허름한","purpose" :"가족외식","delivery":"false"}
+      {"name":"먹골고기마루","star":"4.0","type":"고기",  "location":"묵동",  "price" :"1만원대","taste" :"건강", "mood" :"깔끔한","purpose" :"데이트","delivery":"false"}
+      {"name":"매머드커피","star":"4.2","type":"카페",  "location":"묵동",  "price" :"만원미만","taste" :"달달", "mood" :"깔끔한","purpose" :"데이트","delivery":"false"}
+      {"name":"라떼플로라","star":"4.5","type":"카페",  "location":"묵동",  "price" :"만원미만","taste" :"달달", "mood" :"고급스런","purpose" :"데이트","delivery":"false"}
+      {"name":"커피나무","star":"4.3","type":"카페",  "location":"묵동",  "price" :"만원미만","taste" :"달달", "mood" :"깔끔한","purpose" :"혼자방문","delivery":"false"}
+
+    ]
+
+  };
+</script>
+</head>
+<body>
+  <nav class="topnav">
+    <a href="#">Link</a>
+    <a href="#">Link</a>
+    <a href="#">Link</a>
+  </nav>
+
+  <div class="search-container">
+    <select id="selectFilter" >
+      <option value="type">음식종류</option>
+      <option value="region">지역</option>
+      <option value="opel">가격</option>
+      <option value="audi">맛</option>
+      <option value="audi">분위기</option>
+      <option value="audi">방문목적</option>
+      <option value="audi">배달여부</option>
+    </select>
+   <form action="/action_page.php" >
+     <select id="myFilter">
+
+     </select>
+     <button type="submit">search</button>
+   </form>
+ </div>
+
+<section class="grid-container">
+  <article class="grid-item">
+    <img src="images.jpg" class="image" alt="">
+    <div class="grid">
+      <div class="star-review">별점</div>
+      <div class="grid-title"> 제목</div>
+      <div class="">음식</div>
+      <div class="">지역, 음식종류</div>
+    </div>
+  </article>
+  <article class="grid-item ">
+    <img src="images2.jpg" class="image" alt="">
+    <div class="grid">
+      <div class="star-review">별점</div>
+      <div class="grid-title"> 제목</div>
+      <div class="">음식</div>
+      <div class="">지역, 음식종류</div>
+    </div>
+  </article>
+  <article class="grid-item">
+    <img src="images3.jpg" class="image" alt="">
+    <div class="grid">
+      <div class="star-review">별점</div>
+      <div class="grid-title"> 제목</div>
+      <div class="">음식</div>
+      <div class="">지역, 음식종류</div>
+    </div>
+  </article>
+  <article class="grid-item">4</article>
+  <article class="grid-item">5</article>
+  <article class="grid-item">6</article>
+  <article class="grid-item">7</article>
+  <article class="grid-item">8</article>
+  <article class="grid-item">9</article>
+</section>
+
+<section>
+  <center>
+    <a href="#" class="pagebutton">1</a>
+    <a href="#" class="pagebutton">2</a>
+    <a href="#" class="pagebutton">3</a>
+    <a href="#" class="pagebutton">4</a>
+  </center>
+</section>
+
+<footer class="footer">
+  <p>Footer</p>
+</footer>
+
+</body>
+
+</html>

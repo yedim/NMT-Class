@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="512" height="512" style="border:1px solid #c3c3c3;">
+
+      <script>
+      var canvas = document.getElementById("myCanvas");
+      var ctx = canvas.getContext("2d");
+
+      //진한부황부분
+      ctx.beginPath();
+      ctx.moveTo(29,0);
+      ctx.lineTo(482,0);
+      ctx.lineTo(440,460);
+      ctx.lineTo(256,512);
+      ctx.lineTo(70,460);
+      ctx.lineTo(29,0);
+      ctx.fillStyle="#e44d26";
+      ctx.fill();
+      ctx.closePath();
+
+      //연한 주황부분
+      ctx.beginPath();
+      ctx.moveTo(256,37);
+      ctx.lineTo(440,37);
+      ctx.lineTo(406,431);
+      ctx.lineTo(256,472);
+      ctx.lineTo(256,37);
+      ctx.fillStyle="#f16529";
+      ctx.fill();
+      ctx.closePath();
+
+      //회색부분
+      ctx.beginPath();
+      ctx.moveTo(114,94);
+      ctx.lineTo(256,94);
+      ctx.lineTo(256,151);
+      ctx.lineTo(175,151);
+      ctx.lineTo(181,209);
+      ctx.lineTo(256,209);
+      ctx.lineTo(256,265);
+      ctx.lineTo(129,265);
+
+      ctx.moveTo(132,293);
+      ctx.lineTo(189,293);
+      ctx.lineTo(193,338);
+      ctx.lineTo(256,355);
+      ctx.lineTo(256,414);
+      ctx.lineTo(140,382);
+      ctx.lineTo(132,293);
+      ctx.fillStyle="#ebebeb";
+      ctx.fill();
+      ctx.closePath();
+
+      //흰색부분
+      ctx.beginPath();
+      ctx.moveTo(397,94);
+      ctx.lineTo(256,94);
+      ctx.lineTo(256,151);
+      ctx.lineTo(393,151);
+      ctx.lineTo(397,94);
+
+      ctx.moveTo(387,209);
+      ctx.lineTo(256,209);
+      ctx.lineTo(256,265);
+      ctx.lineTo(325,265);
+      ctx.lineTo(319,338);
+      ctx.lineTo(256,355);
+      ctx.lineTo(256,414);
+      ctx.lineTo(372,382);
+      ctx.lineTo(387,209);
+      ctx.fillStyle="white";
+      ctx.fill();
+      ctx.closePath();
+
+      </script>
+  </body>
+</html>

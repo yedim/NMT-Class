@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <header>
+      <h1>글자</h1>
+    </header>
+    <canvas id="canvas" width="1200px" height="800px" style="border:1px dotted black">
+      <script>
+      var canvas=document.getElementById("canvas");
+      var ctx = canvas.getContext("2d");
+
+      var x =10;
+      var y=canvas.height/2; //(10,400) 에 선그리기
+
+      ctx.beginPath();
+      ctx.moveTo(x,y);
+      ctx.lineTo(canvas.width-10,y);
+      ctx.stroke();
+
+      ctx.font="bold 20px Calibri";
+      ctx.textBaseline='middle';
+      ctx.fillText('middle',x,y);
+      x+=ctx.measureText('middle').width;
+
+      ctx.textBaseline='top';
+      ctx.fillText('top',x,y);
+      x+=ctx.measureText('top').width;
+
+      ctx.textBaseline='bottom';
+      ctx.fillText('bottom',x,y);
+      x+=ctx.measureText('bottom').width;
+
+      ctx.textBaseline='alphabetic';
+      ctx.fillText('alphabetic',x,y);
+      x+=ctx.measureText('alphabetic').width;
+
+      ctx.textBaseline='hanging';
+      ctx.fillText('hanging',x,y);
+      x+=ctx.measureText('hanging').width;
+
+      ctx.textBaseline='ideographic';
+      ctx.fillText('ideographic',x,y);
+      </script>
+  </body>
+</html>

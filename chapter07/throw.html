@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    body{
+      background-color: lightgrey;
+      font-family: sans-serif;
+      margin: auto;
+      width: 80%;
+      font-size:100%;
+    }
+    </style>
+    <script type="text/javascript">
+    answer = 50;
+      function test(){
+        n = document.getElementById("number").value;
+
+        try {
+          if(n=="") throw "입력값 없음";
+          if(isNaN(n)) throw "숫자아님";
+          if(n>answer) throw "너무 큰수임";
+          if(n<answer) throw "너무 작은수임";
+          if(n==answer) throw "정답";
+        } catch (error) { //throw된 값을 error로 받음
+          var result = document.getElementById("message");
+          result.innerHTML ="힌트 : "+error;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Number Guess Game</h1>
+    <h4>1부터 100사이의 숫자를 입력하세요</h4>
+      <input type="text" name="" value="" id="number">
+      <input type="button" name="" value="숫자추측" onclick="test()">
+    <p id="message"></p>
+  </body>
+</html>

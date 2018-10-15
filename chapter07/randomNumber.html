@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+
+  <body>
+
+    <button id="randombtn1" >1부터 10사이의 무작위 수</button>
+    <button  id="randombtn2">1부터 100사이의 무작위 수</button>
+
+    <p id="randomText"></p>
+    <script type="text/javascript">
+    document.getElementById("randombtn1").onclick = function() {randomNum(10)};
+    document.getElementById("randombtn2").onclick = function() {randomNum(100)};
+
+    function randomNum(num)
+    {
+      document.getElementById("randomText").innerHTML=Math.floor(Math.random() * num) + 1;
+    }
+    </script>
+  </body>
+</html>

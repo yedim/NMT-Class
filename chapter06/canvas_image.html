@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <img src="logo.png" alt="" id="img1">
+    <canvas id="canvas" width="300" height="300" style="border : 1px dotted black"></canvas>
+    <script type="text/javascript">
+      var canvas = document.querySelector("canvas");
+      var context = canvas.getContext("2d");
+
+      var img = document.getElementById("img1");
+      context.drawImage(img1,100,100);
+
+      //1.image요소의 dom 객체 생성
+      var img = new Image();
+
+      //2. 이미지 로딩 시작
+      img.src="logo.png";
+
+      //3. 캔버스에 출력
+      img.onload = function(){
+        context.drawImage(img,100,100);
+      }
+    </script>
+
+  </body>
+</html>

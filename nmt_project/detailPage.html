@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="slideshow.css">
+    <script type="text/javascript" src="slideshow.js"></script>
+
+    <style media="screen">
+      .map
+      {
+        margin-top: 70px;
+        padding: 110px;
+        text-align: center;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="topnav">
+      <a href="#">Link</a>
+      <a href="#">Link</a>
+      <a href="#">Link</a>
+    </nav>
+    <!--지도  -->
+    <section class="map">
+      <div class="">
+        지도
+      </div>
+    </section>
+    <!-- 내용  -->
+    <section >
+
+      <div class="slideshow-container">
+
+      <div class="mySlides fade">
+        <img src="images.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides fade">
+        <img src="images2.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides fade">
+        <img src="images3.jpg" style="width:100%">
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+      </div>
+      </div>
+      <br>
+
+    </section>
+
+    <script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+    }
+    </script>
+  </body>
+</html>
